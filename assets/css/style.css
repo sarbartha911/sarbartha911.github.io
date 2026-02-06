@@ -764,6 +764,60 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Project Timeline
+--------------------------------------------------------------*/
+.project-timeline .timeline-group {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 20px 8px;
+  box-shadow: 0 8px 24px rgba(23, 59, 108, 0.08);
+  border: 1px solid #e5eefb;
+  margin-bottom: 20px;
+}
+
+.project-timeline .timeline-group h3 {
+  font-size: 20px;
+  color: #173b6c;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.project-timeline .timeline-item {
+  border-left: 2px solid #149ddd;
+  padding: 2px 0 14px 14px;
+  margin-left: 6px;
+  position: relative;
+}
+
+.project-timeline .timeline-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #149ddd;
+  position: absolute;
+  left: -6px;
+  top: 7px;
+}
+
+.project-timeline .timeline-item h4 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: #173b6c;
+}
+
+.project-timeline .timeline-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #496381;
+}
+
+.project-timeline .timeline-item:last-child {
+  padding-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
