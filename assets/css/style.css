@@ -77,6 +77,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
   border: 8px solid #2c2f3f;
 }
 
@@ -529,6 +532,13 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+.portfolio .portfolio-wrap img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
 }
 
 .portfolio .portfolio-wrap::before {
