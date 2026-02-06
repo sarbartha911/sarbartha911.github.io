@@ -178,6 +178,24 @@
     items: 1
   });
 
+  // Rotating Python automation preview
+  if ($('#python-preview').length) {
+    var pythonFrames = [
+      "import pandas as pd\nfrom dq.rules import RuleBook\n\nsrc = pd.read_parquet('legacy_customer.parquet')\nrules = RuleBook.load('customer_dq_rules.yml')\nquality_report = rules.validate(src)\nprint(f'DQ pass rate: {quality_report.pass_rate:.1f}%')",
+      "from recon.engine import reconcile\n\nresult = reconcile(\n    source='legacy_policy',\n    target='pega_policy',\n    keys=['policy_id'],\n    checks=['count', 'checksum', 'business_rules']\n)\nprint(f'Exceptions: {result.exceptions}')",
+      "from governance.lineage import publish_lineage\n\npublish_lineage(\n    platform='IDMC',\n    domains=['customer', 'policy', 'product'],\n    owner='data_steward_team'\n)\nprint('Lineage graph refreshed')"
+    ];
+
+    var frameIndex = 0;
+    $('#python-preview').text(pythonFrames[frameIndex]);
+    setInterval(function() {
+      frameIndex = (frameIndex + 1) % pythonFrames.length;
+      $('#python-preview').fadeOut(120, function() {
+        $(this).text(pythonFrames[frameIndex]).fadeIn(120);
+      });
+    }, 3200);
+  }
+
   // Init AOS
   function aos_init() {
     AOS.init({

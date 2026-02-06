@@ -394,6 +394,130 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Insights
+--------------------------------------------------------------*/
+.insights .insight-card {
+  background: #fff;
+  border: 1px solid #e8f0fb;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 18px rgba(20, 157, 221, 0.08);
+}
+
+.insights .insight-card h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #173b6c;
+}
+
+.insights .insight-card p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.insights .insight-bar {
+  height: 9px;
+  border-radius: 999px;
+  background: #e5f0fb;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.insights .insight-bar span {
+  display: block;
+  height: 100%;
+  width: var(--bar-width, 90%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, #149ddd, #3fc3ff);
+  border-radius: 999px;
+  animation: insightBarFill 1.6s ease forwards;
+}
+
+.python-terminal {
+  background: #0d1117;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(13, 17, 23, 0.25);
+  border: 1px solid #1f2a37;
+}
+
+.python-terminal .terminal-header {
+  background: #161b22;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.python-terminal .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.python-terminal .dot.red {
+  background: #ff5f57;
+}
+
+.python-terminal .dot.yellow {
+  background: #ffbd2e;
+}
+
+.python-terminal .dot.green {
+  background: #28c840;
+}
+
+.python-terminal .terminal-title {
+  color: #d0d7de;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.python-terminal .terminal-body {
+  min-height: 220px;
+  margin: 0;
+  padding: 16px;
+  color: #7ee787;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.python-terminal .terminal-body::after {
+  content: "_";
+  animation: blinkCursor 1s step-end infinite;
+}
+
+.insights .insights-stack {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #173b6c;
+}
+
+@keyframes insightBarFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Akills
 --------------------------------------------------------------*/
 .skills .progress {
