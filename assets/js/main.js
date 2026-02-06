@@ -201,42 +201,11 @@
     var aboutSection = document.getElementById('about');
     var journey = document.getElementById('about-journey');
     var journeyStatus = document.getElementById('journey-status');
-    var journeyName = document.getElementById('journey-name');
-    var journeyPhone = document.getElementById('journey-phone');
-    var journeyEmail = document.getElementById('journey-email');
-    var journeyDedup = document.getElementById('journey-dedup');
+    var journeyLineage = document.getElementById('journey-lineage');
+    var journeyClassification = document.getElementById('journey-classification');
+    var journeyOutcome = document.getElementById('journey-outcome');
     var journeyNodes = journey.querySelectorAll('.journey-node');
-    var stageLabels = ['Raw Record', 'Cleansed Record', 'Golden Record', 'Lineage Linked'];
-    var stageDetails = [
-      {
-        name: 'SARBARTHA  CHAKRABARTI',
-        phone: '+44-7466-884-915',
-        email: 'sarbartha@gmail,com',
-        dedup: 'Potential Duplicate',
-        dedupClass: 'warn'
-      },
-      {
-        name: 'Sarbartha Chakrabarti',
-        phone: '+44 7466 884915',
-        email: 'sarbartha@gmail.com',
-        dedup: 'Duplicate Candidate Matched',
-        dedupClass: 'warn'
-      },
-      {
-        name: 'Sarbartha Chakrabarti',
-        phone: '+44 7466 884915',
-        email: 'sarbartha@gmail.com',
-        dedup: 'Merged to Golden Record',
-        dedupClass: 'ok'
-      },
-      {
-        name: 'Sarbartha Chakrabarti',
-        phone: '+44 7466 884915',
-        email: 'sarbartha@gmail.com',
-        dedup: 'Lineage + Impact Linked',
-        dedupClass: 'ok'
-      }
-    ];
+    var stageLabels = ['Extracted', 'Cleansed', 'Goldenized', 'Published'];
 
     var clamp = function(value, min, max) {
       return Math.min(max, Math.max(min, value));
@@ -269,19 +238,31 @@
       if (journeyStatus) {
         journeyStatus.textContent = stageLabels[step];
       }
-      if (journeyName) {
-        journeyName.textContent = stageDetails[step].name;
+
+      if (journeyOutcome) {
+        if (step === 3) {
+          journeyOutcome.classList.add('is-ready');
+        } else {
+          journeyOutcome.classList.remove('is-ready');
+        }
       }
-      if (journeyPhone) {
-        journeyPhone.textContent = stageDetails[step].phone;
+
+      if (journeyLineage) {
+        journeyLineage.textContent = step >= 3 ? 'Complete' : 'Pending';
+        if (step >= 3) {
+          journeyLineage.classList.add('ok');
+        } else {
+          journeyLineage.classList.remove('ok');
+        }
       }
-      if (journeyEmail) {
-        journeyEmail.textContent = stageDetails[step].email;
-      }
-      if (journeyDedup) {
-        journeyDedup.textContent = stageDetails[step].dedup;
-        journeyDedup.classList.remove('warn', 'ok');
-        journeyDedup.classList.add(stageDetails[step].dedupClass);
+
+      if (journeyClassification) {
+        journeyClassification.textContent = step >= 2 ? 'PII - Restricted' : 'Pending';
+        if (step >= 2) {
+          journeyClassification.classList.add('ok');
+        } else {
+          journeyClassification.classList.remove('ok');
+        }
       }
     };
 

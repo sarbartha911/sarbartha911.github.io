@@ -364,7 +364,7 @@ section {
 
 .about .journey-node {
   position: relative;
-  margin: 14px 0 18px;
+  margin: 14px 0 18px 18px;
   padding: 12px 12px 12px 14px;
   border-radius: 10px;
   background: #ffffff;
@@ -411,61 +411,76 @@ section {
 
 .about .journey-record {
   position: absolute;
-  left: 34px;
+  left: 8px;
   top: calc(38px + (var(--journey-progress, 0) * 320px));
   transform: translateY(-50%);
-  width: 175px;
-  border-radius: 12px;
-  background: #061426;
-  color: #d7ecff;
-  padding: 10px 12px;
-  box-shadow: 0 10px 24px rgba(6, 20, 38, 0.3);
+  width: 24px;
+  height: 34px;
+  border-radius: 5px;
+  background: #0a1d33;
+  border: 1px solid #1f5e95;
+  box-shadow: 0 6px 12px rgba(6, 20, 38, 0.2);
   transition: top 0.18s linear;
+  z-index: 3;
 }
 
-.about .journey-record .record-id {
+.about .journey-record .record-page {
   display: block;
-  font-size: 11px;
-  color: #8ebbe1;
-  letter-spacing: 0.04em;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  right: 4px;
+  bottom: 5px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(180deg, #cfe7ff 0, #cfe7ff 2px, #9cc7ec 2px, #9cc7ec 4px);
 }
 
-.about .journey-record .record-status {
+.about .journey-record .record-mini-id {
   display: block;
-  font-size: 13px;
+  position: absolute;
+  top: -18px;
+  left: -2px;
+  font-size: 9px;
   font-weight: 700;
-  margin-bottom: 8px;
+  color: #1f5e95;
 }
 
-.about .journey-record .record-fields {
-  display: grid;
-  gap: 5px;
-  font-size: 11px;
-  line-height: 1.25;
+.about .journey-outcome {
+  margin: 4px 0 0 18px;
+  padding: 12px 12px 10px;
+  border-radius: 10px;
+  border: 1px dashed #b8d8f1;
+  background: #ffffff;
+  opacity: 0.6;
+  transition: all 0.25s ease;
 }
 
-.about .journey-record .record-fields b {
-  color: #9ec9ea;
-  font-weight: 600;
-}
-
-.about .journey-record .record-badge {
-  display: inline-block;
-  border-radius: 999px;
-  padding: 2px 8px;
-  font-size: 10px;
+.about .journey-outcome h6 {
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  color: #173b6c;
+  margin: 0 0 8px;
 }
 
-.about .journey-record .record-badge.warn {
-  background: rgba(255, 189, 46, 0.16);
-  color: #ffd57a;
+.about .journey-outcome ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #4f6783;
 }
 
-.about .journey-record .record-badge.ok {
-  background: rgba(40, 200, 64, 0.16);
-  color: #9effb0;
+.about .journey-outcome.is-ready {
+  opacity: 1;
+  border-style: solid;
+  border-color: #8dd3af;
+  box-shadow: 0 6px 16px rgba(32, 180, 134, 0.15);
+}
+
+.about .journey-outcome .ok {
+  color: #1f9f65;
+  font-weight: 700;
 }
 
 @media (max-width: 991px) {
@@ -474,7 +489,7 @@ section {
     margin-bottom: 20px;
   }
   .about .journey-record {
-    width: 160px;
+    left: 6px;
   }
 }
 
