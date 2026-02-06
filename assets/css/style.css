@@ -434,6 +434,38 @@ section {
   display: block;
   font-size: 13px;
   font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.about .journey-record .record-fields {
+  display: grid;
+  gap: 5px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.about .journey-record .record-fields b {
+  color: #9ec9ea;
+  font-weight: 600;
+}
+
+.about .journey-record .record-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.about .journey-record .record-badge.warn {
+  background: rgba(255, 189, 46, 0.16);
+  color: #ffd57a;
+}
+
+.about .journey-record .record-badge.ok {
+  background: rgba(40, 200, 64, 0.16);
+  color: #9effb0;
 }
 
 @media (max-width: 991px) {

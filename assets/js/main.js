@@ -201,8 +201,42 @@
     var aboutSection = document.getElementById('about');
     var journey = document.getElementById('about-journey');
     var journeyStatus = document.getElementById('journey-status');
+    var journeyName = document.getElementById('journey-name');
+    var journeyPhone = document.getElementById('journey-phone');
+    var journeyEmail = document.getElementById('journey-email');
+    var journeyDedup = document.getElementById('journey-dedup');
     var journeyNodes = journey.querySelectorAll('.journey-node');
     var stageLabels = ['Raw Record', 'Cleansed Record', 'Golden Record', 'Lineage Linked'];
+    var stageDetails = [
+      {
+        name: 'SARBARTHA  CHAKRABARTI',
+        phone: '+44-7466-884-915',
+        email: 'sarbartha@gmail,com',
+        dedup: 'Potential Duplicate',
+        dedupClass: 'warn'
+      },
+      {
+        name: 'Sarbartha Chakrabarti',
+        phone: '+44 7466 884915',
+        email: 'sarbartha@gmail.com',
+        dedup: 'Duplicate Candidate Matched',
+        dedupClass: 'warn'
+      },
+      {
+        name: 'Sarbartha Chakrabarti',
+        phone: '+44 7466 884915',
+        email: 'sarbartha@gmail.com',
+        dedup: 'Merged to Golden Record',
+        dedupClass: 'ok'
+      },
+      {
+        name: 'Sarbartha Chakrabarti',
+        phone: '+44 7466 884915',
+        email: 'sarbartha@gmail.com',
+        dedup: 'Lineage + Impact Linked',
+        dedupClass: 'ok'
+      }
+    ];
 
     var clamp = function(value, min, max) {
       return Math.min(max, Math.max(min, value));
@@ -234,6 +268,20 @@
 
       if (journeyStatus) {
         journeyStatus.textContent = stageLabels[step];
+      }
+      if (journeyName) {
+        journeyName.textContent = stageDetails[step].name;
+      }
+      if (journeyPhone) {
+        journeyPhone.textContent = stageDetails[step].phone;
+      }
+      if (journeyEmail) {
+        journeyEmail.textContent = stageDetails[step].email;
+      }
+      if (journeyDedup) {
+        journeyDedup.textContent = stageDetails[step].dedup;
+        journeyDedup.classList.remove('warn', 'ok');
+        journeyDedup.classList.add(stageDetails[step].dedupClass);
       }
     };
 
