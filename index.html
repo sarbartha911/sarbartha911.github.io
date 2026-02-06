@@ -38,31 +38,6 @@
 
 <body>
 
-  <div class="data-ambient" aria-hidden="true">
-    <div class="ambient-node dq">
-      <span class="ambient-title">DQ Cleansing</span>
-      <span class="ambient-sub">Rules + Standardization</span>
-      <span class="ambient-dot"></span>
-    </div>
-    <div class="ambient-node etl">
-      <span class="ambient-title">ETL Migration</span>
-      <span class="ambient-sub">Extract -> Transform -> Load</span>
-      <span class="ambient-dot"></span>
-    </div>
-    <div class="ambient-node mdm">
-      <span class="ambient-title">Golden Record</span>
-      <span class="ambient-sub">Match-Merge + Stewardship</span>
-      <span class="ambient-dot"></span>
-    </div>
-    <div class="ambient-node lineage">
-      <span class="ambient-title">Data Lineage</span>
-      <span class="ambient-sub">Traceability + Impact View</span>
-      <span class="ambient-dot"></span>
-    </div>
-    <div class="ambient-stream stream-1"></div>
-    <div class="ambient-stream stream-2"></div>
-  </div>
-
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
@@ -120,28 +95,27 @@
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <div class="data-flow-visual" aria-label="Data pipeline animation">
-              <div class="flow-stage source">
-                <h5>Legacy Sources</h5>
-                <p>Policy, Customer, Product, Finance</p>
+            <div id="about-journey" class="about-journey" aria-label="Scroll based data lifecycle animation">
+              <div class="journey-line"></div>
+              <div class="journey-node is-active" data-step="0">
+                <h5>Source DB</h5>
+                <p>Legacy customer and policy records</p>
               </div>
-              <div class="flow-arrow">
-                <span class="flow-pulse pulse-1"></span>
-                <span class="flow-pulse pulse-2"></span>
-                <span class="flow-pulse pulse-3"></span>
+              <div class="journey-node" data-step="1">
+                <h5>DQ Cleansing</h5>
+                <p>Validation, standardization, dedup checks</p>
               </div>
-              <div class="flow-stage cleanse">
-                <h5>DQ &amp; Cleansing</h5>
-                <p>Profiling, Rules, Standardization</p>
+              <div class="journey-node" data-step="2">
+                <h5>MDM Golden Record</h5>
+                <p>Match-merge and stewardship approval</p>
               </div>
-              <div class="flow-arrow">
-                <span class="flow-pulse pulse-1"></span>
-                <span class="flow-pulse pulse-2"></span>
-                <span class="flow-pulse pulse-3"></span>
+              <div class="journey-node" data-step="3">
+                <h5>Lineage Published</h5>
+                <p>Traceability and downstream impact view</p>
               </div>
-              <div class="flow-stage golden">
-                <h5>Golden Record</h5>
-                <p>MDM Match-Merge, Stewardship, Publish</p>
+              <div id="journey-record" class="journey-record">
+                <span class="record-id">CUST-20481</span>
+                <span id="journey-status" class="record-status">Raw Record</span>
               </div>
             </div>
           </div>

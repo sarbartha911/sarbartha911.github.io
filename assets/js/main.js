@@ -196,6 +196,52 @@
     }, 3200);
   }
 
+  // About section: scroll-driven data journey animation
+  if ($('#about-journey').length && $('#about').length) {
+    var aboutSection = document.getElementById('about');
+    var journey = document.getElementById('about-journey');
+    var journeyStatus = document.getElementById('journey-status');
+    var journeyNodes = journey.querySelectorAll('.journey-node');
+    var stageLabels = ['Raw Record', 'Cleansed Record', 'Golden Record', 'Lineage Linked'];
+
+    var clamp = function(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    };
+
+    var updateJourney = function() {
+      var rect = aboutSection.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var progress = (vh * 0.2 - rect.top) / (rect.height * 0.75);
+      progress = clamp(progress, 0, 1);
+      journey.style.setProperty('--journey-progress', progress.toFixed(3));
+
+      var step = 0;
+      if (progress >= 0.75) {
+        step = 3;
+      } else if (progress >= 0.5) {
+        step = 2;
+      } else if (progress >= 0.25) {
+        step = 1;
+      }
+
+      journeyNodes.forEach(function(node, idx) {
+        if (idx === step) {
+          node.classList.add('is-active');
+        } else {
+          node.classList.remove('is-active');
+        }
+      });
+
+      if (journeyStatus) {
+        journeyStatus.textContent = stageLabels[step];
+      }
+    };
+
+    updateJourney();
+    window.addEventListener('scroll', updateJourney, { passive: true });
+    window.addEventListener('resize', updateJourney);
+  }
+
   // Init AOS
   function aos_init() {
     AOS.init({
