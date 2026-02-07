@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 110px;
+  bottom: 78px;
   width: 300px;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
@@ -350,6 +350,7 @@ section {
 .about .content ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .about .content ul li {
@@ -378,6 +379,23 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
+}
+
+.about .content > .row {
+  margin: 10px -8px 14px;
+}
+
+.about .content > .row > [class*="col-"] {
+  padding: 0 8px;
+}
+
+.about .content > .row ul {
+  background: #fff;
+  border: 1px solid rgba(122, 44, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-height: 100%;
+  box-shadow: 0 4px 10px rgba(76, 46, 128, 0.05);
 }
 
 .about .about-journey {
