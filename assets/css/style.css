@@ -9,12 +9,12 @@
 # General
 --------------------------------------------------------------*/
 :root {
-  --theme-bg: #f7f1ff;
+  --theme-bg: #fbf7ff;
   --theme-surface: #ffffff;
-  --theme-ink: #24133f;
-  --theme-muted: #5e4f7b;
-  --theme-purple: #7a2cff;
-  --theme-purple-deep: #4f148c;
+  --theme-ink: #2d2342;
+  --theme-muted: #6a5a86;
+  --theme-purple: #9b6dff;
+  --theme-purple-deep: #5f3db0;
   --theme-orange: #ff8a00;
   --theme-orange-soft: #ffb454;
 }
@@ -22,7 +22,7 @@
 body {
   font-family: "Manrope", sans-serif;
   color: var(--theme-ink);
-  background: radial-gradient(circle at 14% 10%, #f0e4ff 0%, var(--theme-bg) 36%, #fff9f0 100%);
+  background: radial-gradient(circle at 14% 10%, #f5ecff 0%, var(--theme-bg) 36%, #fffaf1 100%);
   line-height: 1.65;
 }
 
@@ -77,13 +77,13 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: 110px;
   width: 300px;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
-  padding: 0 15px 130px 15px;
-  background: linear-gradient(180deg, #2f0a5b 0%, #1e0b38 55%, #2a0f4d 100%);
+  padding: 0 15px 20px 15px;
+  background: linear-gradient(180deg, #6c3ed2 0%, #4d2a96 55%, #382064 100%);
   overflow-y: auto;
 }
 
@@ -140,6 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 1199px) {
   #header {
     left: -300px;
+    bottom: 0;
   }
   #main {
     margin-left: 0;
@@ -173,6 +174,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 6px;
   transition: 0.3s;
   font-size: 15px;
+  border-radius: 8px;
 }
 
 .nav-menu a i {
@@ -335,7 +337,14 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: var(--theme-purple-deep);
+}
+
+.about .content {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(122, 44, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px 18px 16px;
 }
 
 .about .content ul {
@@ -348,9 +357,23 @@ section {
 }
 
 .about .content ul i {
-  font-size: 20px;
-  padding-right: 2px;
-  color: #149ddd;
+  display: none;
+}
+
+.about .content ul li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.about .content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, var(--theme-purple), var(--theme-orange));
 }
 
 .about .content p:last-child {
@@ -1468,7 +1491,8 @@ section {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: linear-gradient(180deg, #2a0f4d 0%, #1c0a34 100%);
+  background: linear-gradient(180deg, #4d2a96 0%, #382064 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 #footer .copyright {
