@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-toggle i {
-  color: #149ddd;
+  color: var(--theme-purple);
 }
 
 .mobile-nav-active {
@@ -273,7 +273,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid var(--theme-orange);
 }
 
 @media (min-width: 1024px) {
@@ -434,7 +434,7 @@ section {
   top: 44px;
   bottom: 44px;
   width: 2px;
-  background: linear-gradient(180deg, #149ddd 0%, #20b486 100%);
+  background: linear-gradient(180deg, var(--theme-purple) 0%, var(--theme-orange) 100%);
 }
 
 .about .journey-node {
@@ -456,18 +456,18 @@ section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #87bee9;
+  background: rgba(155, 109, 255, 0.45);
 }
 
 .about .journey-node.is-active {
   opacity: 1;
   transform: translateX(2px);
-  border-color: #b5d9f5;
-  box-shadow: 0 6px 18px rgba(20, 157, 221, 0.12);
+  border-color: rgba(155, 109, 255, 0.45);
+  box-shadow: 0 6px 18px rgba(95, 61, 176, 0.16);
 }
 
 .about .journey-node.is-active::before {
-  background: #149ddd;
+  background: var(--theme-purple);
 }
 
 .about .journey-node h5 {
@@ -619,14 +619,14 @@ section {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #122f57;
+  color: #1f3f83;
   font-size: 15px;
   font-family: "Sora", sans-serif;
   transition: ease-in-out 0.3s;
 }
 
 .facts .count-box a:hover {
-  color: #1f5297;
+  color: var(--theme-purple);
 }
 
 /*--------------------------------------------------------------
@@ -1078,17 +1078,17 @@ section {
   color: #fff;
   font-size: 28px;
   text-align: center;
-  background: rgba(20, 157, 221, 0.75);
+  background: linear-gradient(120deg, rgba(155, 109, 255, 0.88), rgba(255, 138, 0, 0.85));
   transition: 0.3s;
   width: 50%;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.95);
+  background: linear-gradient(120deg, rgba(95, 61, 176, 0.95), rgba(255, 138, 0, 0.95));
 }
 
 .portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid #37b3ed;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -1194,7 +1194,7 @@ section {
 }
 
 .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #c3e8fa;
+  color: rgba(155, 109, 255, 0.35);
   font-size: 26px;
 }
 
@@ -1249,7 +1249,7 @@ section {
 }
 
 .testimonials .owl-dot.active {
-  background-color: #149ddd !important;
+  background: linear-gradient(120deg, var(--theme-purple), var(--theme-orange)) !important;
 }
 
 @media (max-width: 767px) {
@@ -1328,7 +1328,7 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #149ddd;
+  background: linear-gradient(120deg, var(--theme-purple), var(--theme-orange));
   color: #fff;
 }
 
@@ -1521,7 +1521,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #149ddd !important;
+  background: linear-gradient(120deg, var(--theme-purple), var(--theme-orange)) !important;
 }
 
 .portfolio-details .portfolio-info {
