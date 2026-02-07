@@ -605,9 +605,9 @@ section {
 }
 
 .insights .insight-bar {
-  height: 9px;
+  height: 10px;
   border-radius: 999px;
-  background: #e5f0fb;
+  background: rgba(122, 44, 255, 0.12);
   margin-bottom: 10px;
   overflow: hidden;
 }
@@ -618,9 +618,10 @@ section {
   width: var(--bar-width, 90%);
   transform: scaleX(0);
   transform-origin: left center;
-  background: linear-gradient(90deg, #149ddd, #3fc3ff);
+  background: linear-gradient(90deg, var(--theme-purple) 0%, #b286ff 55%, var(--theme-orange) 100%);
   border-radius: 999px;
   animation: insightBarFill 1.6s ease forwards;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
 }
 
 .python-terminal {
@@ -729,14 +730,19 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #dce8f8;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(122, 44, 255, 0.12);
+  overflow: hidden;
 }
 
 .skills .progress-bar {
   width: 1px;
   height: 10px;
   transition: .9s;
-  background-color: #149ddd;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--theme-purple) 0%, #b286ff 55%, var(--theme-orange) 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
 }
 
 /*--------------------------------------------------------------
