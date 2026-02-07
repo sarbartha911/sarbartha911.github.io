@@ -1628,10 +1628,10 @@ section {
   .nav-menu a {
     padding: 7px 10px;
     margin-bottom: 2px;
-    font-size: 14px;
+    font-size: 15px;
   }
   .nav-menu a i {
-    font-size: 20px;
+    font-size: 21px;
     padding-right: 7px;
   }
   #footer {
@@ -1656,11 +1656,11 @@ section {
     font-size: 16px;
   }
   .nav-menu a {
-    padding: 6px 9px;
-    font-size: 13px;
+    padding: 7px 10px;
+    font-size: 14px;
   }
   .nav-menu a i {
-    font-size: 18px;
+    font-size: 20px;
   }
   #footer .credits {
     display: none;
